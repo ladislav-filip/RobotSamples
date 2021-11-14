@@ -5,6 +5,7 @@ Ukázka zprovoznění a práce s [Robot Framework](https://robotframework.org/)
 * instalovat Python z adresy https://www.python.org/downloads/
 * při instalaci si označit checkbox pro nastavení cesty PATH
 * po instalaci restart nebo odhlášení
+* přes příkazový řádek nainstalovat [Robot Framework](https://robotframework.org/) ```pip install robotframework```
 * instalovat VSCode pokud jej nemáme
 * ve VSCode instalovat dva doplňky nalezené pomocí "robocorp": Robocorp Code, Robot Framework Language Server
 * vyhledat umístění "python.exe" a zkopírovat do schánky, např. "C:\Users\ladis\AppData\Local\Programs\Python\Python310\python.exe"
