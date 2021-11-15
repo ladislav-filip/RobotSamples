@@ -1,6 +1,10 @@
 *** Settings ***
 Library            RequestsLibrary
 Library            Collections
+Documentation      https://www.youtube.com/watch?v=BW8bxgkSZHQ
+
+*** Variables ***
+${Base_url}         http://thetestingworldapi.com/
 
 *** Test Cases ***
 Quick
@@ -16,3 +20,14 @@ Grab Avatar Url
     ${resp}=                       GET On Session     github    /users/jandias
     Should Be Equal As Strings     ${resp.status_code}  200
     Dictionary Should Contain Key  ${resp.json()}       avatar_url
+    Log                            ${resp.status_code}
+
+Get Students
+    Create Session                 Get_Student_Details     ${Base_url}
+    ${response}=                   GET On Session          Get_Student_Details     api/studentsDetails
+    Should Be Equal As Strings     ${response.json()}[0][first_name]    Test2
+    log to console                 ${response.status_code}
+    #log to console                 ${response.content}
+    log to console                 ${response.json()}[0]
+    log to console                 ${response.json()}[0][first_name]
+    log                            ${response.status_code}
